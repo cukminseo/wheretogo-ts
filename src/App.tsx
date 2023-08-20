@@ -13,17 +13,19 @@ import OwnerMypage from "./pages/owner/mypage/ownerMypage";
 function App() {
   return (
     <div css={Container}>
-      <Global styles={GlobalStyle} />
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signin" element={<Signin />} />
+      <BrowserRouter>
+        <Global styles={GlobalStyle} />
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signin" element={<Signin />} />
 
-        <Route path="/customer" element={<CustomerMain />} />
-        <Route path="/customer/mypage" element={<CustomerMypage />} />
+          <Route path="/customer" element={<CustomerMain />} />
+          <Route path="/customer/mypage" element={<CustomerMypage />} />
 
-        <Route path="/owner" element={<OwnerMain />} />
-        <Route path="/owner/mypage" element={<OwnerMypage />} />
-      </Routes>
+          <Route path="/owner" element={<OwnerMain />} />
+          <Route path="/owner/mypage" element={<OwnerMypage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
