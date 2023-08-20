@@ -6,5 +6,4 @@ export const Container = css`
   margin: 0 auto;
   box-sizing: border-box;
   border: 1px solid #ccc;
-  padding: 0 1.25rem; // 스마트폰 화면에서 콘텐츠와 화면 사이에 약간의 간격을 주기 위함
 `;
