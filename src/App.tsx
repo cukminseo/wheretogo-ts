@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Global } from "@emotion/react";
+import GlobalStyle from "./styles/GlobalStyle";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CustomerMain from "./pages/customer/main/customerMain";
+import OwnerMain from "./pages/owner/main/ownerMain";
+import Login from "./pages/user/Login";
+import Signin from "./pages/user/Signin";
+import CustomerMypage from "./pages/customer/mypage/customerMypage";
+import OwnerMypage from "./pages/owner/mypage/ownerMypage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Global styles={GlobalStyle} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signin" element={<Signin />} />
+
+          <Route path="/customer" element={<CustomerMain />} />
+          <Route path="/customer/mypage" element={<CustomerMypage />} />
+
+          <Route path="/owner" element={<OwnerMain />} />
+          <Route path="/owner/mypage" element={<OwnerMypage />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 
