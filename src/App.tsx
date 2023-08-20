@@ -1,4 +1,4 @@
-import { Global } from "@emotion/react";
+import { Global, ThemeProvider } from "@emotion/react";
 import GlobalStyle from "./styles/GlobalStyle";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CustomerMain from "./pages/customer/main/customerMain";
@@ -7,23 +7,26 @@ import Login from "./pages/user/Login";
 import Signin from "./pages/user/Signin";
 import CustomerMypage from "./pages/customer/mypage/customerMypage";
 import OwnerMypage from "./pages/owner/mypage/ownerMypage";
+import { theme } from "./styles/theme";
 
 function App() {
   return (
     <>
-      <Global styles={GlobalStyle} />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signin" element={<Signin />} />
+      <ThemeProvider theme={theme}>
+        <Global styles={GlobalStyle} />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signin" element={<Signin />} />
 
-          <Route path="/customer" element={<CustomerMain />} />
-          <Route path="/customer/mypage" element={<CustomerMypage />} />
+            <Route path="/customer" element={<CustomerMain />} />
+            <Route path="/customer/mypage" element={<CustomerMypage />} />
 
-          <Route path="/owner" element={<OwnerMain />} />
-          <Route path="/owner/mypage" element={<OwnerMypage />} />
-        </Routes>
-      </BrowserRouter>
+            <Route path="/owner" element={<OwnerMain />} />
+            <Route path="/owner/mypage" element={<OwnerMypage />} />
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
     </>
   );
 }
