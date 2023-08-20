@@ -1,6 +1,5 @@
 /** @jsxImportSource @emotion/react */
 import React, { useState } from "react";
-import { Container } from "../../components/Container";
 import "./BottomNav.css";
 import { Link } from "react-router-dom";
 
@@ -8,7 +7,7 @@ const BottomNav = () => {
   // 현재 선택된 아이콘을 관리하는 state
   const [activeNav, setActiveNav] = useState(1);
   return (
-    <nav className="wrapper" css={Container}>
+    <nav className="wrapper">
       <Link
         to="/Favorites"
         className="nav-link"
