@@ -24,7 +24,6 @@ function App() {
         <Route path="/owner" element={<OwnerMain />} />
         <Route path="/owner/mypage" element={<OwnerMypage />} />
       </Routes>
-      <h1>asd</h1>
     </div>
   );
 }

@@ -10,7 +10,7 @@ const BottomNav = () => {
   return (
     <nav className="wrapper" css={Container}>
       <Link
-        to="/Favorites"
+        to="/customer" //추후 변경예정
         className="nav-link"
         onClick={() => setActiveNav(1)}
       >
@@ -18,12 +18,16 @@ const BottomNav = () => {
           Favorites
         </div>
       </Link>
-      <Link to="/Mainpage" className="nav-link" onClick={() => setActiveNav(2)}>
+      <Link to="/customer" className="nav-link" onClick={() => setActiveNav(2)}>
         <div className={activeNav === 2 ? "nav-item active" : "nav-item"}>
           Mainpage
         </div>
       </Link>
-      <Link to="/Mypage" className="nav-link" onClick={() => setActiveNav(3)}>
+      <Link
+        to="/customer/mypage"
+        className="nav-link"
+        onClick={() => setActiveNav(3)}
+      >
         <div className={activeNav === 3 ? "nav-item active" : "nav-item"}>
           Mypage
         </div>
